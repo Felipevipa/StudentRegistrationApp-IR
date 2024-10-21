@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentRegistrationApp.Domain.Entities
 {
-    public class Student
+    public class AlreadyEnrolledInThisCourseException : Exception
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public List<Course> Courses { get; set; } = new List<Course>();
-
-        
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StudentRegistrationApp.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f79978fe23968228245443643c4a06bd230d6b8b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+600b43eb96ca45c3be94877bff4a87427cbc8b81")]
 [assembly: System.Reflection.AssemblyProductAttribute("StudentRegistrationApp.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StudentRegistrationApp.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

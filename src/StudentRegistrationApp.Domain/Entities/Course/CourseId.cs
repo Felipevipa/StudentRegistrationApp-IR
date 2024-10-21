@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace StudentRegistrationApp.Domain.Entities
 {
-    public class Teacher
+    public class CourseId
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
-        public List<Course> Courses { get; set; }
     }
 }

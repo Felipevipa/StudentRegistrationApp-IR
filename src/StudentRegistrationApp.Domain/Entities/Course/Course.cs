@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace StudentRegistrationApp.Domain.Entities
 {
-    public class Subject
+    public class Course
     {
-        public Guid Id { get; set; }
+        public CourseId Id { get; set; }
         public string Name { get; set; }
-        public int Credits { get; set; }
+        public int Credits { get; set; } = 3;
         public Guid TeacherId { get; set; }
         public Teacher Teacher { get; set; }
     }
