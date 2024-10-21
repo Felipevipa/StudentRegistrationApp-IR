@@ -10,6 +10,8 @@ namespace StudentRegistrationApp.Domain.Entities
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public List<Subject> Subjects { get; set; } = new List<Subject>();
+        public List<Course> Courses { get; set; } = new List<Course>();
+
+        
     }
 }
