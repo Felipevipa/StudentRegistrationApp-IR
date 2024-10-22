@@ -18,6 +18,7 @@ namespace StudentRegistrationApp.Tests.Infrastructure.Adapters.Out.Persistence.I
         private readonly GetCourseStudentsService _getCourseStudentsService;
         private readonly GetCoursesOfStudentService _getCoursesOfStudentService;
         private readonly GetAllCoursesService _getAllCoursesService;
+        private readonly GetCoursesByTeacherService _getCoursesByTeacherService;
 
         public RegisterStudentAndEnrollmentsServiceTest()
         {
@@ -26,6 +27,7 @@ namespace StudentRegistrationApp.Tests.Infrastructure.Adapters.Out.Persistence.I
             _getCourseStudentsService = new GetCourseStudentsService(_repository);
             _getCoursesOfStudentService = new GetCoursesOfStudentService(_repository);
             _getAllCoursesService = new GetAllCoursesService(_repository);
+            _getCoursesByTeacherService = new GetCoursesByTeacherService(_repository);
         }
 
         [Fact]
@@ -159,5 +161,6 @@ namespace StudentRegistrationApp.Tests.Infrastructure.Adapters.Out.Persistence.I
             coursesStudent[2].Should().Be(TEST_COURSE_LIST[2]);
 
         }
+
     }
 }

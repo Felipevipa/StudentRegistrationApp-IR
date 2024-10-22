@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "StudentRegistrationApp.Presentaion.Api.Controllers.RegisterStudentAndEnrollmentsController",
+    "Method": "HealthCheck",
+    "RelativePath": "health/instance",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
