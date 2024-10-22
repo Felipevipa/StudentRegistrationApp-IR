@@ -9,5 +9,10 @@ namespace StudentRegistrationApp.Domain.Entities
     public class CourseId
     {
         public Guid Id { get; set; }
+
+        public CourseId()
+        {
+            Id = Guid.NewGuid();
+        }
     }
 }

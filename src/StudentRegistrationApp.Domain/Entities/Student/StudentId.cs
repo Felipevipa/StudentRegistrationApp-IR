@@ -8,6 +8,6 @@ namespace StudentRegistrationApp.Domain.Entities
 {
     public class StudentId
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
     }
 }

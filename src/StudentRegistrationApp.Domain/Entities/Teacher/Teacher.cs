@@ -10,6 +10,11 @@ namespace StudentRegistrationApp.Domain.Entities
     {
         public TeacherId Id { get; set; }
         public string Name { get; set; }
-        public List<Course> Courses { get; set; } = new List<Course>();
+
+        public Teacher(string name)
+        {
+            Id = new TeacherId();
+            Name = name;
+        }
     }
 }

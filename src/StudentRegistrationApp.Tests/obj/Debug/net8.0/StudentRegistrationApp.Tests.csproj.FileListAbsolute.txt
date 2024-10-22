@@ -98,3 +98,17 @@ D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\obj\
 D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\obj\Debug\net8.0\StudentRegistrationApp.Tests.pdb
 D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\obj\Debug\net8.0\StudentRegistrationApp.Tests.genruntimeconfig.cache
 D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\obj\Debug\net8.0\ref\StudentRegistrationApp.Tests.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\CoverletSourceRootsMapping_StudentRegistrationApp.Tests
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\Castle.Core.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\FluentAssertions.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\Moq.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\StudentRegistrationApp.Application.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\StudentRegistrationApp.Domain.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\StudentRegistrationApp.Application.pdb
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\StudentRegistrationApp.Domain.pdb
