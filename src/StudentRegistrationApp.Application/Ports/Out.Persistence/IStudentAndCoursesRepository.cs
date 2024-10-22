@@ -30,6 +30,6 @@ namespace StudentRegistrationApp.Application.Ports.Out.Persistence
 
         Student CreateStudent(Student student);
 
-        Enrollment CrateEnrollment(Enrollment enrollment);
+        Enrollment CreateEnrollment(Enrollment enrollment);
     }
 }

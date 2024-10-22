@@ -31,7 +31,7 @@ namespace StudentRegistrationApp.Application.Services
             Student student = _studentsAndCoursesRepository.CreateStudent(new Student(name));
             foreach (var course in courses)
             {
-                _studentsAndCoursesRepository.CrateEnrollment(new Enrollment(student, course));
+                _studentsAndCoursesRepository.CreateEnrollment(new Enrollment(student, course));
             }
             return student;
         }

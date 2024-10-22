@@ -1,13 +1,14 @@
-﻿using FluentAssertions;
-using Moq;
-using StudentRegistrationApp.Application.Ports.Out.Persistence;
-using StudentRegistrationApp.Application.Services;
-using StudentRegistrationApp.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentAssertions;
+using Moq;
+
+using StudentRegistrationApp.Domain.Entities;
+using StudentRegistrationApp.Application.Services;
+using StudentRegistrationApp.Application.Ports.Out.Persistence;
 
 namespace StudentRegistrationApp.Tests.Application
 {
