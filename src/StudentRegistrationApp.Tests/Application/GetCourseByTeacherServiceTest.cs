@@ -46,7 +46,7 @@ namespace StudentRegistrationApp.Tests.Application
 
             // Act
             var coursesTeacher1 = getCoursesByTeacherService.Execute(TEST_TEACHER_1.Id);
-            var coursesTeacher2 = getCoursesByTeacherService.Execute(TEST_TEACHER_2.Id);
+            var coursesTeacher2 = getCoursesByTeacherService.Execute(TEST_TEACHER_2);
 
 
             // Assert
