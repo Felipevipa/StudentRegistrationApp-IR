@@ -27,7 +27,12 @@ namespace StudentRegistrationApp.Application.Services
             {
                 throw new ArgumentException("There should be 3 courses registered");
             }
-
+            var dupes = courses.GroupBy(x => new { x.TeacherId })
+                               .Where(x => x.Skip(1).Any());
+            if (dupes.Any())
+            {
+                throw new ArgumentException("You must register three courses with three different teachers");
+            }
             Student student = _studentsAndCoursesRepository.CreateStudent(new Student(name));
             foreach (var course in courses)
             {
