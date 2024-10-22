@@ -112,3 +112,5 @@ D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\
 D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\StudentRegistrationApp.Domain.dll
 D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\StudentRegistrationApp.Application.pdb
 D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\StudentRegistrationApp.Domain.pdb
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\StudentRegistrationApp.Infrastructure.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Tests\bin\Debug\net8.0\StudentRegistrationApp.Infrastructure.pdb

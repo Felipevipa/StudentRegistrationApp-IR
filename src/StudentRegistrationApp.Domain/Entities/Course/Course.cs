@@ -24,5 +24,14 @@ namespace StudentRegistrationApp.Domain.Entities
             TeacherId = teacher.Id;
             Teacher = teacher;
         }
+
+        public Course(CourseId id, string name, int credits, Teacher teacher)
+        {
+            Id = id;
+            Name = name;
+            Credits = credits;
+            TeacherId = teacher.Id;
+            Teacher = teacher;
+        }
     }
 }

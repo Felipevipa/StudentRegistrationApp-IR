@@ -12,6 +12,7 @@
           "Microsoft.NET.Test.Sdk": "17.8.0",
           "Moq": "4.20.72",
           "StudentRegistrationApp.Application": "1.0.0",
+          "StudentRegistrationApp.Infrastructure": "1.0.0",
           "coverlet.collector": "6.0.0",
           "xunit": "2.5.3",
           "xunit.runner.visualstudio": "2.5.3"
@@ -1123,6 +1124,17 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "StudentRegistrationApp.Infrastructure/1.0.0": {
+        "dependencies": {
+          "StudentRegistrationApp.Application": "1.0.0"
+        },
+        "runtime": {
+          "StudentRegistrationApp.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1803,6 +1815,11 @@
       "sha512": ""
     },
     "StudentRegistrationApp.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StudentRegistrationApp.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

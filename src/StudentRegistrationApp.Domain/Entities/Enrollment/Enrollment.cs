@@ -24,5 +24,14 @@ namespace StudentRegistrationApp.Domain.Entities
             CourseId = course.Id;
             Course = course;
         }
+
+        public Enrollment(EnrollmentId id, Student student, Course course)
+        {
+            Id = id;
+            StudentId = student.Id;
+            Student = student;
+            CourseId = course.Id;
+            Course = course;
+        }
     }
 }

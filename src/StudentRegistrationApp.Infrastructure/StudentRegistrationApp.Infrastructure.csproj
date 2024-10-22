@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\StudentRegistrationApp.Application\StudentRegistrationApp.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Adapters\Out.Persistence\MySql\Actions\" />
+  </ItemGroup>
+
 </Project>

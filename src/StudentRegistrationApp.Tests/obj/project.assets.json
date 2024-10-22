@@ -1832,6 +1832,19 @@
         "runtime": {
           "bin/placeholder/StudentRegistrationApp.Domain.dll": {}
         }
+      },
+      "StudentRegistrationApp.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "StudentRegistrationApp.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StudentRegistrationApp.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StudentRegistrationApp.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -5795,6 +5808,11 @@
       "type": "project",
       "path": "../StudentRegistrationApp.Domain/StudentRegistrationApp.Domain.csproj",
       "msbuildProject": "../StudentRegistrationApp.Domain/StudentRegistrationApp.Domain.csproj"
+    },
+    "StudentRegistrationApp.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../StudentRegistrationApp.Infrastructure/StudentRegistrationApp.Infrastructure.csproj",
+      "msbuildProject": "../StudentRegistrationApp.Infrastructure/StudentRegistrationApp.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5803,6 +5821,7 @@
       "Microsoft.NET.Test.Sdk >= 17.8.0",
       "Moq >= 4.20.72",
       "StudentRegistrationApp.Application >= 1.0.0",
+      "StudentRegistrationApp.Infrastructure >= 1.0.0",
       "coverlet.collector >= 6.0.0",
       "xunit >= 2.5.3",
       "xunit.runner.visualstudio >= 2.5.3"
@@ -5843,6 +5862,9 @@
           "projectReferences": {
             "D:\\Proyectos\\dotnet\\StudentRegistrationApp\\src\\StudentRegistrationApp.Application\\StudentRegistrationApp.Application.csproj": {
               "projectPath": "D:\\Proyectos\\dotnet\\StudentRegistrationApp\\src\\StudentRegistrationApp.Application\\StudentRegistrationApp.Application.csproj"
+            },
+            "D:\\Proyectos\\dotnet\\StudentRegistrationApp\\src\\StudentRegistrationApp.Infrastructure\\StudentRegistrationApp.Infrastructure.csproj": {
+              "projectPath": "D:\\Proyectos\\dotnet\\StudentRegistrationApp\\src\\StudentRegistrationApp.Infrastructure\\StudentRegistrationApp.Infrastructure.csproj"
             }
           }
         }

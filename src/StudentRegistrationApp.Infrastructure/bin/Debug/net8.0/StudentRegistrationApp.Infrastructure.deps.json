@@ -7,14 +7,46 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "StudentRegistrationApp.Infrastructure/1.0.0": {
+        "dependencies": {
+          "StudentRegistrationApp.Application": "1.0.0"
+        },
         "runtime": {
           "StudentRegistrationApp.Infrastructure.dll": {}
+        }
+      },
+      "StudentRegistrationApp.Application/1.0.0": {
+        "dependencies": {
+          "StudentRegistrationApp.Domain": "1.0.0"
+        },
+        "runtime": {
+          "StudentRegistrationApp.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "StudentRegistrationApp.Domain/1.0.0": {
+        "runtime": {
+          "StudentRegistrationApp.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "StudentRegistrationApp.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StudentRegistrationApp.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StudentRegistrationApp.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

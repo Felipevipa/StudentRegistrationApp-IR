@@ -10,3 +10,9 @@ D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Infrastruc
 D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Infrastructure\obj\Debug\net8.0\refint\StudentRegistrationApp.Infrastructure.dll
 D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Infrastructure\obj\Debug\net8.0\StudentRegistrationApp.Infrastructure.pdb
 D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Infrastructure\obj\Debug\net8.0\ref\StudentRegistrationApp.Infrastructure.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Infrastructure\obj\Debug\net8.0\StudentRegistrationApp.Infrastructure.csproj.AssemblyReference.cache
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Infrastructure\bin\Debug\net8.0\StudentRegistrationApp.Application.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Infrastructure\bin\Debug\net8.0\StudentRegistrationApp.Domain.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Infrastructure\bin\Debug\net8.0\StudentRegistrationApp.Application.pdb
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Infrastructure\bin\Debug\net8.0\StudentRegistrationApp.Domain.pdb
+D:\Proyectos\dotnet\StudentRegistrationApp\src\StudentRegistrationApp.Infrastructure\obj\Debug\net8.0\StudentR.8369016B.Up2Date

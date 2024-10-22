@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StudentRegistrationApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5c913432c44c3927173dd3523a0a5a2e15e7c54")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc32389d73f7b188cb7718775373760b35328892")]
 [assembly: System.Reflection.AssemblyProductAttribute("StudentRegistrationApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StudentRegistrationApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

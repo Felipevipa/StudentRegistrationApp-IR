@@ -14,5 +14,10 @@ namespace StudentRegistrationApp.Domain.Entities
         {
             Id = Guid.NewGuid();
         }
+
+        public StudentId(Guid id)
+        {
+            Id = id;
+        }
     }
 }
