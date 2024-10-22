@@ -34,6 +34,11 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.MySql.R
             throw new NotImplementedException();
         }
 
+        public List<Course> GetAllCourses()
+        {
+            throw new NotImplementedException();
+        }
+
         public Course GetCourseById(CourseId courseId)
         {
             throw new NotImplementedException();

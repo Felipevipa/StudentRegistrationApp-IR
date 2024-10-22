@@ -28,6 +28,8 @@ namespace StudentRegistrationApp.Application.Ports.Out.Persistence
         List<Course> GetCoursesByTeacher(TeacherId teacherId);
         List<Course> GetCoursesByTeacher(Teacher teacher);
 
+        List<Course> GetAllCourses();
+
         Student CreateStudent(Student student);
 
         Enrollment CreateEnrollment(Enrollment enrollment);

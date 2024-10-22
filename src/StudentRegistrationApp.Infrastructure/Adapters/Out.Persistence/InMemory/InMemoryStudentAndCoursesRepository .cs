@@ -18,14 +18,28 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
         public InMemoryStudentAndCoursesRepository()
         {
             // Add some default Teachers, Courses, and Students for testing
-            var teacher1 = new Teacher(new TeacherId(), "John Doe");
-            var teacher2 = new Teacher(new TeacherId(), "Jane Smith");
+            var teacher1 = new Teacher(new TeacherId(), "Julio Fernandez");
+            var teacher2 = new Teacher(new TeacherId(), "Andres Villamizar");
+            var teacher3 = new Teacher(new TeacherId(), "Luisa Torres");
+            var teacher4 = new Teacher(new TeacherId(), "Fernanda Salinas");
+            var teacher5 = new Teacher(new TeacherId(), "Martin Hernandez");
 
             _teachers.Add(teacher1);
             _teachers.Add(teacher2);
+            _teachers.Add(teacher3);
+            _teachers.Add(teacher4);
+            _teachers.Add(teacher5);
 
-            _courses.Add(new Course(new CourseId(), "Math 101", 3, teacher1));
-            _courses.Add(new Course(new CourseId(), "History 101", 3, teacher2));
+            _courses.Add(new Course(new CourseId(), "Historia 1", 3, teacher1));
+            _courses.Add(new Course(new CourseId(), "Historia 2", 3, teacher1));
+            _courses.Add(new Course(new CourseId(), "Matematicas 1", 3, teacher2));
+            _courses.Add(new Course(new CourseId(), "Matematicas 2", 3, teacher2));
+            _courses.Add(new Course(new CourseId(), "Etica", 3, teacher3));
+            _courses.Add(new Course(new CourseId(), "Catedra universitaria", 3, teacher3));
+            _courses.Add(new Course(new CourseId(), "Fisica 1", 3, teacher4));
+            _courses.Add(new Course(new CourseId(), "Fisica 2", 3, teacher4));
+            _courses.Add(new Course(new CourseId(), "Quimica 1", 3, teacher5));
+            _courses.Add(new Course(new CourseId(), "Quimica 2", 3, teacher5));
         }
 
         public Enrollment CreateEnrollment(Enrollment enrollment)
@@ -40,9 +54,14 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
             return student;
         }
 
+        public List<Course> GetAllCourses()
+        {
+            return _courses;
+        }
+
         public Course GetCourseById(CourseId courseId)
         {
-            return _courses.FirstOrDefault(c => c.Id == courseId);
+            return _courses.FirstOrDefault(c => c.Id == courseId); ;
         }
 
         public Course GetCourseOfEnrollment(CourseId courseId)
@@ -57,7 +76,7 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
 
         public List<Course> GetCoursesByTeacher(Teacher teacher)
         {
-            throw new NotImplementedException();
+            return GetCoursesByTeacher(teacher.Id);
         }
 
         public List<Enrollment> GetEnrollmentsOfCourse(CourseId courseId)
