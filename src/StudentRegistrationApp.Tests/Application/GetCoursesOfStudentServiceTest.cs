@@ -26,10 +26,12 @@ namespace StudentRegistrationApp.Tests.Application
         {
             // Arrange
             Student TEST_STUDENT = new Student("Andres Villamizar");
-            Teacher TEST_TEACHER = new Teacher("Antonio Perez");
-            Course TEST_COURSE_1 = new Course("Historia clásica 1", 3, TEST_TEACHER);
-            Course TEST_COURSE_2 = new Course("Historia clásica 2", 3, TEST_TEACHER);
-            Course TEST_COURSE_3 = new Course("Historia clásica 3", 3, TEST_TEACHER);
+            Teacher TEST_TEACHER_1 = new Teacher("Antonio Perez");
+            Teacher TEST_TEACHER_2 = new Teacher("Julian Perez");
+            Teacher TEST_TEACHER_3 = new Teacher("José Perez");
+            Course TEST_COURSE_1 = new Course("Historia clásica 1", 3, TEST_TEACHER_1);
+            Course TEST_COURSE_2 = new Course("Historia clásica 2", 3, TEST_TEACHER_2);
+            Course TEST_COURSE_3 = new Course("Historia clásica 3", 3, TEST_TEACHER_3);
             List<Enrollment> ENROLLMENTS_TEST = new List<Enrollment>();
             ENROLLMENTS_TEST.Add(new Enrollment(TEST_STUDENT, TEST_COURSE_1));
             ENROLLMENTS_TEST.Add(new Enrollment(TEST_STUDENT, TEST_COURSE_2));
@@ -53,14 +55,14 @@ namespace StudentRegistrationApp.Tests.Application
 
 
             // Act
-            var coursesStudent = getCoursesOfStudentService.Execute(TEST_STUDENT.Id);
+            var coursesStudent = getCoursesOfStudentService.Execute(TEST_STUDENT);
 
 
             // Assert
             coursesStudent.Should().HaveCount(3);
-            coursesStudent[0].Teacher.Should().Be(TEST_TEACHER);
-            coursesStudent[1].Teacher.Should().Be(TEST_TEACHER);
-            coursesStudent[2].Teacher.Should().Be(TEST_TEACHER);
+            coursesStudent[0].Teacher.Should().Be(TEST_TEACHER_1);
+            coursesStudent[1].Teacher.Should().Be(TEST_TEACHER_2);
+            coursesStudent[2].Teacher.Should().Be(TEST_TEACHER_3);
             coursesStudent[0].Should().Be(TEST_COURSE_1);
             coursesStudent[1].Should().Be(TEST_COURSE_2);
             coursesStudent[2].Should().Be(TEST_COURSE_3);
