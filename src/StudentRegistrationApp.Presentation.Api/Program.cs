@@ -19,6 +19,7 @@ builder.Services.AddScoped<IRegisterStudentAndEnrollments, RegisterStudentAndEnr
 builder.Services.AddScoped<IGetAllCourses, GetAllCoursesService>();
 builder.Services.AddScoped<IGetCourseStudents, GetCourseStudentsService>();
 builder.Services.AddScoped<IGetCoursesOfStudent, GetCoursesOfStudentService>();
+builder.Services.AddScoped<IGetCoursesByTeacher, GetCoursesByTeacherService>();
 
 var app = builder.Build();
 

@@ -18,11 +18,11 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
         public InMemoryStudentAndCoursesRepository()
         {
             // Add some default Teachers, Courses, and Students for testing
-            var teacher1 = new Teacher(new TeacherId(), "Julio Fernandez");
-            var teacher2 = new Teacher(new TeacherId(), "Andres Villamizar");
-            var teacher3 = new Teacher(new TeacherId(), "Luisa Torres");
-            var teacher4 = new Teacher(new TeacherId(), "Fernanda Salinas");
-            var teacher5 = new Teacher(new TeacherId(), "Martin Hernandez");
+            var teacher1 = new Teacher(new TeacherId(Guid.Parse("c8bff21b-0332-4d84-81a7-3941c18f1cc4")), "Julio Fernandez");
+            var teacher2 = new Teacher(new TeacherId(Guid.Parse("3fc255e6-d2f7-47f1-9b79-35ebf03dd7d4")), "Andres Villamizar");
+            var teacher3 = new Teacher(new TeacherId(Guid.Parse("9a16ab75-45f2-41f3-b918-4e4bbae71ee5")), "Luisa Torres");
+            var teacher4 = new Teacher(new TeacherId(Guid.Parse("812b7a9f-0c52-4717-b145-b5be80eed88d")), "Fernanda Salinas");
+            var teacher5 = new Teacher(new TeacherId(Guid.Parse("f7f5fc7a-8061-48ca-9486-85adc6e0ed97")), "Martin Hernandez");
 
             _teachers.Add(teacher1);
             _teachers.Add(teacher2);
@@ -76,7 +76,7 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
 
         public List<Course> GetCoursesByTeacher(TeacherId teacherId)
         {
-            return _courses.Where(c => c.Teacher.Id == teacherId).ToList();
+            return _courses.Where(c => c.Teacher.Id.Id == teacherId.Id).ToList();
         }
 
         public List<Course> GetCoursesByTeacher(Teacher teacher)
