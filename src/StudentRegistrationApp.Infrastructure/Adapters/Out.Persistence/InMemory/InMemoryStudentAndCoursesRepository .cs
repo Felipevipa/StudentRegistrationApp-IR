@@ -96,7 +96,7 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
 
         public List<Enrollment> GetEnrollmentsOfStudent(StudentId studentId)
         {
-            return _enrollments.Where(e => e.Student.Id == studentId).ToList();
+            return _enrollments.Where(e => e.Student.Id.Id == studentId.Id).ToList();
         }
 
         public List<Enrollment> GetEnrollmentsOfStudent(Student student)

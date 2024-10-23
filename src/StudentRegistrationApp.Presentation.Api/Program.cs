@@ -18,6 +18,7 @@ builder.Services.AddSingleton<IStudentAndCoursesRepository, InMemoryStudentAndCo
 builder.Services.AddScoped<IRegisterStudentAndEnrollments, RegisterStudentAndEnrollmentsService>();
 builder.Services.AddScoped<IGetAllCourses, GetAllCoursesService>();
 builder.Services.AddScoped<IGetCourseStudents, GetCourseStudentsService>();
+builder.Services.AddScoped<IGetCoursesOfStudent, GetCoursesOfStudentService>();
 
 var app = builder.Build();
 
