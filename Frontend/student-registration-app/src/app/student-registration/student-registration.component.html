@@ -1,23 +1,23 @@
 <div class="form-container">
-    <h2>Student Registration</h2>
+    <h2>Registro de estudiantes</h2>
     <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="full-width">
-            <mat-label for="first-name">First Name: </mat-label>
+            <mat-label for="first-name">Nombre: </mat-label>
             <input matInput id="first-name" type="text" formControlName="name">
-            <mat-error *ngIf="registrationForm.get('name')?.invalid">Student name is required</mat-error>
+            <mat-error *ngIf="registrationForm.get('name')?.invalid">El campo nombre es requerido</mat-error>
         </mat-form-field>
 
         <mat-form-field class="full-width">
-            <mat-label>Courses (Select up to 3):</mat-label>
+            <mat-label>Cursos (Selecciona 3):</mat-label>
             <mat-select formControlName="selectedCourse" multiple>
                 <mat-option *ngFor="let course of courses" [value]="course">{{ course.name }} - {{ course.teacher.name }}</mat-option>
             </mat-select>
-            <mat-error *ngIf="registrationForm.get('selectedCourse')?.invalid">Course selection is required</mat-error>
+            <mat-error *ngIf="registrationForm.get('selectedCourse')?.invalid">El campo cursos es requerido</mat-error>
         </mat-form-field>
-        <p *ngIf="registrationForm.get('selectedCourse')?.value.length >= 3">You have selected the maximum of 3 courses.</p>
+        <p *ngIf="registrationForm.get('selectedCourse')?.value.length >= 3">Has seleccionado el maximo de cursos.</p>
 
         <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">
-            Register
+            Enviar
         </button>
     </form>
 </div>
