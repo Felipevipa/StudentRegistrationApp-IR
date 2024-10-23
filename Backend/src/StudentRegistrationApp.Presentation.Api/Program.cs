@@ -6,18 +6,17 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http.HttpResults;
 
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+string CORSOpenPolicy = "OpenCORSPolicy";
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-                      policy =>
-                      {
-                          policy.WithOrigins("http://localhost:4200",
-                                              "https://localhost:4200");
-                      });
+    options.AddPolicy(
+      name: CORSOpenPolicy,
+      builder => {
+          builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod();
+      });
 });
 
 // Add services to the container.
@@ -46,7 +45,7 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
-app.UseCors(MyAllowSpecificOrigins);
+app.UseCors(CORSOpenPolicy);
 
 app.UseEndpoints(endpoints =>
 {

@@ -10,7 +10,7 @@
         <mat-form-field class="full-width">
             <mat-label>Courses (Select up to 3):</mat-label>
             <mat-select formControlName="selectedCourse" multiple>
-                <mat-option *ngFor="let course of courses" [value]="course.id.id">{{ course.name }} - {{ course.teacher.name }}</mat-option>
+                <mat-option *ngFor="let course of courses" [value]="course">{{ course.name }} - {{ course.teacher.name }}</mat-option>
             </mat-select>
             <mat-error *ngIf="registrationForm.get('selectedCourse')?.invalid">Course selection is required</mat-error>
         </mat-form-field>

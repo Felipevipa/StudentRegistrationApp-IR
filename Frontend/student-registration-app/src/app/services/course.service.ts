@@ -21,23 +21,7 @@ export class CourseService {
 
     constructor(private http: HttpClient) { }
 
-    // getCourses(): Observable<Course[]> {
-    //     return this.coursesSubject.asObservable();
-    // }
-
-    // getCourses(): Course[] {
-    //     return this.courses;
-    // }
-
     getCourses() {
         return this.http.get<any[]>(`${this.apiUrl}/courses/GetAllCourses`);
-    }
-
-    registerStudent(courseId: string, studentName: string): void {
-        const course = this.courses.find(c => c.id === courseId);
-        if (course) {
-            // course.students.push(studentName);
-            this.coursesSubject.next(this.courses);
-        }
     }
 }
