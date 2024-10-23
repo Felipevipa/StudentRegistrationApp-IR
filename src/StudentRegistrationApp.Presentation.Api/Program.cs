@@ -16,6 +16,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IRegisterStudentAndEnrollments, RegisterStudentAndEnrollmentsService>();
 builder.Services.AddScoped<IStudentAndCoursesRepository, InMemoryStudentAndCoursesRepository>();
+builder.Services.AddScoped<IGetAllCourses, GetAllCoursesService>();
 
 var app = builder.Build();
 

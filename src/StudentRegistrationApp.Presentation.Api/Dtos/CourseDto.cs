@@ -11,6 +11,7 @@ namespace StudentRegistrationApp.Presentation.Api.Dtos
         public Guid CourseId { get; set; }
         public string CourseName { get; set; }
         public int Credits { get; set; }
+        public Guid TeacherId { get; set; }
         public string TeacherName { get; set; }
     }
 }
