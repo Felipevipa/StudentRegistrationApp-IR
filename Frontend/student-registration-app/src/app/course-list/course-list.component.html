@@ -1,19 +1,21 @@
 <!-- src/app/course-list/course-list.component.html -->
 <div class="course-list">
     <h2>Course List</h2>
-    
+
     <mat-card *ngFor="let course of courses" class="course-card">
-      <mat-card-header>
-        <mat-card-title>{{ course.name }}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <h3>Enrolled Students</h3>
-        <!-- <ul>
-          <li *ngFor="let student of course.students">
-            {{ student }}
-          </li>
-        </ul> -->
-      </mat-card-content>
+        <mat-card-header>
+            <mat-card-title>{{ course.name + " - " + course.teacher.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <h3>Enrolled Students</h3>
+            <ul>
+                <li *ngFor="let student of course.students">
+                    <strong>{{ student.name }}</strong>
+                    <p>
+                        <span *ngFor="let course of student.courses">{{course.name + ", "}}</span>
+                    </p>
+                </li>
+            </ul>
+        </mat-card-content>
     </mat-card>
-  </div>
-  
+</div>

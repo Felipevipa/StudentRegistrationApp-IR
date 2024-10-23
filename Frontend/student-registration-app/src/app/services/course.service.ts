@@ -24,4 +24,12 @@ export class CourseService {
     getCourses() {
         return this.http.get<any[]>(`${this.apiUrl}/courses/GetAllCourses`);
     }
+
+    getCoursesOfStudent(id: string) {
+        return this.http.get<any[]>(`${this.apiUrl}/enrollments/GetCoursesOfStudent/${id}`);
+    }
+
+    getCourseStudents(id: string) {
+        return this.http.get<any[]>(`${this.apiUrl}/enrollments/GetCourseStudents/${id}`);
+    }
 }
