@@ -28,7 +28,6 @@ export class RegistrationService {
       studentName: studentName,
       courses: mapCourses,
     }
-    console.warn(data);
     return this.http.post<any>(`${this.apiUrl}/student/register`, data);
   }
 }
