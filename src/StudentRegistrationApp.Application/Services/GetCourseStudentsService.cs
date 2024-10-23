@@ -23,12 +23,9 @@ namespace StudentRegistrationApp.Application.Services
         {
             ArgumentNullException.ThrowIfNull(courseId, "'courseId' must no be null");
             List<Enrollment> enrollments = _studentsAndCoursesRepository.GetEnrollmentsOfCourse(courseId);
-            List<Student> students = new List<Student>();
+            List<Student> students = enrollments.Select(enrollment =>
+                _studentsAndCoursesRepository.GetStudentById(enrollment.Student.Id)).ToList();
 
-            foreach (var enrollment in enrollments)
-            {
-                students.Add(_studentsAndCoursesRepository.GetStudentById(enrollment.StudentId));
-            }
             return students;
         }
         public List<Student> Execute(Course course)

@@ -30,16 +30,16 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
             _teachers.Add(teacher4);
             _teachers.Add(teacher5);
 
-            _courses.Add(new Course(new CourseId(), "Historia 1", 3, teacher1));
-            _courses.Add(new Course(new CourseId(), "Historia 2", 3, teacher1));
-            _courses.Add(new Course(new CourseId(), "Matematicas 1", 3, teacher2));
-            _courses.Add(new Course(new CourseId(), "Matematicas 2", 3, teacher2));
-            _courses.Add(new Course(new CourseId(), "Etica", 3, teacher3));
-            _courses.Add(new Course(new CourseId(), "Catedra universitaria", 3, teacher3));
-            _courses.Add(new Course(new CourseId(), "Fisica 1", 3, teacher4));
-            _courses.Add(new Course(new CourseId(), "Fisica 2", 3, teacher4));
-            _courses.Add(new Course(new CourseId(), "Quimica 1", 3, teacher5));
-            _courses.Add(new Course(new CourseId(), "Quimica 2", 3, teacher5));
+            _courses.Add(new Course(new CourseId(Guid.Parse("17119498-8bf9-4068-a5cf-dab7ddb55cd9")), "Historia 1", 3, teacher1));
+            _courses.Add(new Course(new CourseId(Guid.Parse("be1d7182-1893-4f2a-b795-a8402398e605")), "Historia 2", 3, teacher1));
+            _courses.Add(new Course(new CourseId(Guid.Parse("93c08df5-3d32-495b-a470-e481b685a4a7")), "Matematicas 1", 3, teacher2));
+            _courses.Add(new Course(new CourseId(Guid.Parse("f1752182-ed9b-4115-9ba4-a5bf9db62838")), "Matematicas 2", 3, teacher2));
+            _courses.Add(new Course(new CourseId(Guid.Parse("a53ba00f-c330-4e4b-9d23-824f325b5f27")), "Etica", 3, teacher3));
+            _courses.Add(new Course(new CourseId(Guid.Parse("3e940134-4079-443e-b36a-da7319303f93")), "Catedra universitaria", 3, teacher3));
+            _courses.Add(new Course(new CourseId(Guid.Parse("34cef1d4-b471-499d-969d-7747dfe057c4")), "Fisica 1", 3, teacher4));
+            _courses.Add(new Course(new CourseId(Guid.Parse("4a7f2c46-774b-41d9-8e6d-becc29a20a72")), "Fisica 2", 3, teacher4));
+            _courses.Add(new Course(new CourseId(Guid.Parse("c04348ed-e25a-4aae-a5b1-e0b497aafe15")), "Quimica 1", 3, teacher5));
+            _courses.Add(new Course(new CourseId(Guid.Parse("508be8aa-ec1a-460d-84ac-3013e1ab43ed")), "Quimica 2", 3, teacher5));
         }
 
         public Enrollment CreateEnrollment(Enrollment enrollment)
@@ -61,7 +61,12 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
 
         public Course GetCourseById(CourseId courseId)
         {
-            return _courses.FirstOrDefault(c => c.Id == courseId); ;
+            var course = _courses.FirstOrDefault(c => c.Id.Id == courseId.Id);
+            if (course == null)
+            {
+                throw new InvalidOperationException($"Course with ID {courseId} not found.");
+            }
+            return course;
         }
 
         public Course GetCourseOfEnrollment(CourseId courseId)
@@ -81,7 +86,7 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
 
         public List<Enrollment> GetEnrollmentsOfCourse(CourseId courseId)
         {
-            return _enrollments.Where(e => e.Course.Id == courseId).ToList();
+            return _enrollments.Where(e => e.Course.Id.Id == courseId.Id).ToList();
         }
 
         public List<Enrollment> GetEnrollmentsOfCourse(Course course)
@@ -101,7 +106,12 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
 
         public Student GetStudentById(StudentId studentId)
         {
-            return _students.FirstOrDefault(s => s.Id == studentId);
+            var student = _students.FirstOrDefault(c => c.Id.Id == studentId.Id);
+            if (student == null)
+            {
+                throw new InvalidOperationException($"Course with ID {studentId} not found.");
+            }
+            return student;
         }
 
         public List<Student> GetStudentsFromCourse(Course course)

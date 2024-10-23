@@ -109,15 +109,7 @@ namespace StudentRegistrationApp.Tests.Infrastructure.Adapters.Out.Persistence.I
         void GivenACourse_GetStudents_ListOfStudents()
         {
             // Arrange
-            Teacher TEST_TEACHER_1 = new Teacher("José Perez");
-            Course TEST_COURSE_1 = new Course("Historia clásica 1", 3, TEST_TEACHER_1);
-            Course TEST_COURSE_2 = new Course("Historia clásica 2", 3, new Teacher("Any name"));
-            Course TEST_COURSE_3 = new Course("Historia clásica 3", 3, new Teacher("Any name"));
-            List<Course> TEST_COURSE_LIST = new List<Course>();
-            TEST_COURSE_LIST.Add(TEST_COURSE_1);
-            TEST_COURSE_LIST.Add(TEST_COURSE_2);
-            TEST_COURSE_LIST.Add(TEST_COURSE_3);
-
+            List<Course> TEST_COURSE_LIST = _getAllCoursesService.Execute().GroupBy(x => x.TeacherId).Select(x => x.First()).ToList().Take(3).ToList();
 
             _registerStudentAndEnrollmentsService.Execute("Andres Villamizar", TEST_COURSE_LIST);
             _registerStudentAndEnrollmentsService.Execute("Antonio Villamizar", TEST_COURSE_LIST);
@@ -126,8 +118,7 @@ namespace StudentRegistrationApp.Tests.Infrastructure.Adapters.Out.Persistence.I
             _registerStudentAndEnrollmentsService.Execute("German Villamizar", TEST_COURSE_LIST);
 
             // Act
-            var studentsInCourse = _getCourseStudentsService.Execute(TEST_COURSE_1);
-
+            var studentsInCourse = _getCourseStudentsService.Execute(TEST_COURSE_LIST[0].Id);
 
             // Assert
             studentsInCourse.Should().HaveCount(5);
@@ -137,6 +128,25 @@ namespace StudentRegistrationApp.Tests.Infrastructure.Adapters.Out.Persistence.I
             studentsInCourse[3].Name.Should().Be("José Villamizar");
             studentsInCourse[4].Name.Should().Be("German Villamizar");
 
+        }
+
+        [Fact]
+        void GivenACourse_GetStudents_ListOfStudents2()
+        {
+            // Arrange
+            List<Course> TEST_COURSE_LIST = _getAllCoursesService.Execute().GroupBy(x => x.TeacherId).Select(x => x.First()).ToList().Take(3).ToList();
+
+            // Register students to the course
+            _registerStudentAndEnrollmentsService.Execute("Andres Villamizar", TEST_COURSE_LIST);
+            _registerStudentAndEnrollmentsService.Execute("Antonio Villamizar", TEST_COURSE_LIST);
+
+            // Act
+            var studentsInCourse = _getCourseStudentsService.Execute(TEST_COURSE_LIST[0]);
+
+            // Assert
+            studentsInCourse.Should().HaveCount(2);
+            studentsInCourse[0].Name.Should().Be("Andres Villamizar");
+            studentsInCourse[1].Name.Should().Be("Antonio Villamizar");
         }
 
 

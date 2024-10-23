@@ -14,9 +14,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSingleton<IStudentAndCoursesRepository, InMemoryStudentAndCoursesRepository>();
 builder.Services.AddScoped<IRegisterStudentAndEnrollments, RegisterStudentAndEnrollmentsService>();
-builder.Services.AddScoped<IStudentAndCoursesRepository, InMemoryStudentAndCoursesRepository>();
 builder.Services.AddScoped<IGetAllCourses, GetAllCoursesService>();
+builder.Services.AddScoped<IGetCourseStudents, GetCourseStudentsService>();
 
 var app = builder.Build();
 
