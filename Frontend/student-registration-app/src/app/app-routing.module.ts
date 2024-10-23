@@ -6,7 +6,8 @@ import { CourseListComponent } from './course-list/course-list.component';
 const routes: Routes = [
   { path: '', redirectTo: '/register', pathMatch: 'full' },
   { path: 'register', component: StudentRegistrationComponent },
-  { path: 'courses/:id', component: CourseListComponent }
+  { path: 'courses/:id', component: CourseListComponent },
+  { path: '**', redirectTo: '/register'}
 ];
 
 @NgModule({
