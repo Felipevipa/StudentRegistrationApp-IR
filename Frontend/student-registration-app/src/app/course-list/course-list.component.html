@@ -1,5 +1,5 @@
 <!-- src/app/course-list/course-list.component.html -->
-<div class="course-list">
+<div *ngIf="courses.length > 0; else notFound" class="course-list">
     <h2>Tus cursos</h2>
 
     <mat-card *ngFor="let course of courses" class="course-card">
@@ -19,3 +19,9 @@
         </mat-card-content>
     </mat-card>
 </div>
+<ng-template #notFound>
+    <div style="width: 100%; display: flex; justify-content: center;">
+        <p>Estudiante no encontrado</p>
+    </div>
+
+</ng-template>

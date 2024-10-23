@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Course } from '../models/course.model';
 import { CourseService } from '../services/course.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-course-list',
@@ -10,11 +11,20 @@ import { CourseService } from '../services/course.service';
 export class CourseListComponent {
   courses: any[] = []
 
-  constructor(private courseService: CourseService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private courseService: CourseService
+  ) { }
 
 
   ngOnInit(): void {
-    this.courseService.getCoursesOfStudent("84f12883-e127-4af4-aff7-cea88f9d4a71")
+    const id = this.route.snapshot.paramMap.get('id')
+    console.log(id);
+    if(id == null){
+      return
+    }
+
+    this.courseService.getCoursesOfStudent(id)
       .subscribe(courses => {
         courses.map(course => {
           course.students = []
@@ -24,10 +34,10 @@ export class CourseListComponent {
               students.map(student => {
                 student.courses = []
                 this.courseService.getCoursesOfStudent(student.id.id)
-                .subscribe(courses2 => {
-                  student.courses = courses2;
-                  course.students.push(student)
-                })
+                  .subscribe(courses2 => {
+                    student.courses = courses2;
+                    course.students.push(student)
+                  })
               })
               console.log(course);
               this.courses.push(course)

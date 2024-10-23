@@ -34,11 +34,13 @@ export class StudentRegistrationComponent implements OnInit {
 
 
   onSubmit() {
-    console.warn(this.registrationForm.value);
+    if(this.registrationForm.value.selectedCourse.length != 3) {
+      alert("Debes registrar exactamente 3 cursos")
+    }
 
     this.registrationService.registerStudent(this.registrationForm.value.name, this.registrationForm.value.selectedCourse)
     .subscribe(response => {
-      this.router.navigate(['/courses'])
+      this.router.navigate(['/courses/', response.id])
     })
   }
 }
