@@ -1,1 +1,54 @@
-<p>student-registration works!</p>
+<div class="form-container">
+    <h2>Student Registration</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width">
+            <mat-label for="first-name">First Name: </mat-label>
+            <input matInput id="first-name" type="text" formControlName="name">
+            <mat-error *ngIf="registrationForm.get('name')?.invalid">Student name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Courses (Select up to 3):</mat-label>
+            <mat-select formControlName="selectedCourse" multiple>
+                <mat-option *ngFor="let course of courses" [value]="course.id.id">{{ course.name }} - {{ course.teacher.name }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="registrationForm.get('selectedCourse')?.invalid">Course selection is required</mat-error>
+        </mat-form-field>
+        <p *ngIf="registrationForm.get('selectedCourse')?.value.length >= 3">You have selected the maximum of 3 courses.</p>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">
+            Register
+        </button>
+    </form>
+</div>
+
+
+<!-- <div class="registration-form">
+    <h2>Student Registration</h2>
+    
+    <form [formGroup]="" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="studentName">Name</label>
+        <input type="text" id="studentName" formControlName="studentName" placeholder="Enter your name" class="form-control"/>
+        <div *ngIf="studentForm.get('studentName')?.invalid && studentForm.get('studentName')?.touched" class="error">
+          Name is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="courses">Select Courses (up to 3):</label>
+        <div *ngFor="let course of availableCourses">
+          <input type="checkbox" [value]="course" (change)="onCourseToggle(course, $event.target.checked)" [checked]="courses.controls.some(c => c.value === course)" />
+          {{ course }}
+        </div>
+        <div *ngIf="courses.length >= 3" class="warning">
+          You can only select up to 3 courses.
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="studentForm.invalid || courses.length === 0">
+        Submit Registration
+      </button>
+    </form>
+  </div>
+   -->

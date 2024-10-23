@@ -1,0 +1,43 @@
+import { Injectable } from '@angular/core';
+import { Course } from '../models/course.model';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+    providedIn: 'root'
+})
+export class CourseService {
+    private courses: Course[] = [
+        { id: "id1", name: 'Matematicas' },
+        { id: "id2", name: 'Fisica' },
+        { id: "id3", name: 'Quimica' },
+        { id: "id4", name: 'Filosofia' },
+        { id: "id5", name: 'Historia' },
+    ];
+
+    private apiUrl = 'http://localhost:5199';
+
+    private coursesSubject: BehaviorSubject<Course[]> = new BehaviorSubject(this.courses);
+
+    constructor(private http: HttpClient) { }
+
+    // getCourses(): Observable<Course[]> {
+    //     return this.coursesSubject.asObservable();
+    // }
+
+    // getCourses(): Course[] {
+    //     return this.courses;
+    // }
+
+    getCourses() {
+        return this.http.get<any[]>(`${this.apiUrl}/courses/GetAllCourses`);
+    }
+
+    registerStudent(courseId: string, studentName: string): void {
+        const course = this.courses.find(c => c.id === courseId);
+        if (course) {
+            // course.students.push(studentName);
+            this.coursesSubject.next(this.courses);
+        }
+    }
+}
