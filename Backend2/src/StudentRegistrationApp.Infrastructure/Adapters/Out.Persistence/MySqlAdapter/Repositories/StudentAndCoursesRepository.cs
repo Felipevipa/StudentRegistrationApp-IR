@@ -7,13 +7,13 @@ using Microsoft.EntityFrameworkCore;
 using StudentRegistrationApp.Domain.Entities;
 using StudentRegistrationApp.Application.Ports.Out.Persistence;
 
-namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.MySqlAdapter
+namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.MySqlAdapter.Repositories
 {
-    public class SqlStudentAndCoursesRepository : IStudentAndCoursesRepository
+    public class StudentAndCoursesRepository : IStudentAndCoursesRepository
     {
-        private readonly StudentsRegisterDbContextAdapter _context;
+        private readonly StudentsRegisterDbContext _context;
 
-        public SqlStudentAndCoursesRepository(StudentsRegisterDbContextAdapter context)
+        public StudentAndCoursesRepository(StudentsRegisterDbContext context)
         {
             _context = context;
         }
@@ -89,7 +89,7 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.MySqlAd
         {
             var student = _context.Students
                 .Include(s => s.Enrollments)
-                    .ThenInclude(e => e.Course)
+                    //.ThenInclude(e => e.Course)
                 .FirstOrDefault(s => s.StudentId == studentId);
 
             return student?.Enrollments.ToList() ?? new List<Enrollment>();

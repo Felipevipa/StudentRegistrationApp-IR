@@ -1,11 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using StudentRegistrationApp.Presentation;
 using StudentRegistrationApp.Application.Ports.In;
 using StudentRegistrationApp.Application.Ports.Out.Persistence;
 using StudentRegistrationApp.Application.Services;
 using StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemory;
 using StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.MySqlAdapter;
-using StudentRegistrationApp.Presentation.Repositories;
+using StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.MySqlAdapter.Repositories;
 
 string CORSOpenPolicy = "OpenCORSPolicy";
 

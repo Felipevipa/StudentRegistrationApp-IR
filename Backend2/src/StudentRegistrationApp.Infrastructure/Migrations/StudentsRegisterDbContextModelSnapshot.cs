@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using StudentRegistrationApp.Presentation;
+using StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.MySqlAdapter;
 
 #nullable disable
 
-namespace StudentRegistrationApp.Presentation.Migrations
+namespace StudentRegistrationApp.Infrastructure.Migrations
 {
     [DbContext(typeof(StudentsRegisterDbContext))]
     partial class StudentsRegisterDbContextModelSnapshot : ModelSnapshot
