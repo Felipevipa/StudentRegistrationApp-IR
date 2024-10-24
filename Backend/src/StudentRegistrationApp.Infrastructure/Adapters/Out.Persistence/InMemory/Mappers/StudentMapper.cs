@@ -14,14 +14,14 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
         {
             return new StudentDto
             {
-                Id = student.Id.Id,
+                Id = student.StudentId,
                 Name = student.Name
             };
         }
 
         public Student ToEntity(StudentDto studentDto)
         {
-            return new Student(new StudentId(studentDto.Id), studentDto.Name);
+            return new Student(studentDto.Id, studentDto.Name);
         }
     }
 }

@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StudentRegistrationApp.Application\StudentRegistrationApp.Application.csproj" />
-    <ProjectReference Include="..\StudentRegistrationApp.Infrastructure\StudentRegistrationApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\StudentRegistrationApp.Domain\StudentRegistrationApp.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -39,19 +39,19 @@ namespace StudentRegistrationApp.Tests.Application
             ENROLLMENTS_TEST.Add(new Enrollment(TEST_STUDENT, TEST_COURSE_3));
 
             studentAndCoursesRepositoryMock
-                .Setup(repo => repo.GetEnrollmentsOfStudent(TEST_STUDENT.Id))
+                .Setup(repo => repo.GetEnrollmentsOfStudent(TEST_STUDENT.StudentId))
                 .Returns(ENROLLMENTS_TEST);
 
             studentAndCoursesRepositoryMock
-                .Setup(repo => repo.GetCourseById(TEST_COURSE_1.Id))
+                .Setup(repo => repo.GetCourseById(TEST_COURSE_1.CourseId))
                 .Returns(TEST_COURSE_1);
 
             studentAndCoursesRepositoryMock
-                .Setup(repo => repo.GetCourseById(TEST_COURSE_2.Id))
+                .Setup(repo => repo.GetCourseById(TEST_COURSE_2.CourseId))
                 .Returns(TEST_COURSE_2);
 
             studentAndCoursesRepositoryMock
-                .Setup(repo => repo.GetCourseById(TEST_COURSE_3.Id))
+                .Setup(repo => repo.GetCourseById(TEST_COURSE_3.CourseId))
                 .Returns(TEST_COURSE_3);
 
 

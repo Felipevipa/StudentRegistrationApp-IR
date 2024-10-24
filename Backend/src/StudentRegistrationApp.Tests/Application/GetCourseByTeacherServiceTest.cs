@@ -36,16 +36,16 @@ namespace StudentRegistrationApp.Tests.Application
             Course TEST_COURSE_4= new Course("Etica", 3, TEST_TEACHER_2);
 
             studentAndCoursesRepositoryMock
-                .Setup(repo => repo.GetCoursesByTeacher(TEST_TEACHER_1.Id))
+                .Setup(repo => repo.GetCoursesByTeacher(TEST_TEACHER_1.TeacherId))
                 .Returns([TEST_COURSE_1, TEST_COURSE_2]);
 
             studentAndCoursesRepositoryMock
-                .Setup(repo => repo.GetCoursesByTeacher(TEST_TEACHER_2.Id))
+                .Setup(repo => repo.GetCoursesByTeacher(TEST_TEACHER_2.TeacherId))
                 .Returns([TEST_COURSE_3, TEST_COURSE_4]);
 
 
             // Act
-            var coursesTeacher1 = getCoursesByTeacherService.Execute(TEST_TEACHER_1.Id);
+            var coursesTeacher1 = getCoursesByTeacherService.Execute(TEST_TEACHER_1.TeacherId);
             var coursesTeacher2 = getCoursesByTeacherService.Execute(TEST_TEACHER_2);
 
 

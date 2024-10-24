@@ -10,28 +10,28 @@ namespace StudentRegistrationApp.Application.Ports.Out.Persistence
 {
     public interface IStudentAndCoursesRepository
     {
-        List<Enrollment> GetEnrollmentsOfStudent(StudentId studentId);
+        List<Enrollment> GetEnrollmentsOfStudent(Guid studentId);
         List<Enrollment> GetEnrollmentsOfStudent(Student student);
-        Course GetCourseOfEnrollment(CourseId courseId);
-        Course GetCourseById(CourseId courseId);
+        Course GetCourseOfEnrollment(Guid courseId);
+        Course GetCourseById(Guid courseId);
 
-        List<Enrollment> GetEnrollmentsOfCourse(CourseId courseId);
+        List<Enrollment> GetEnrollmentsOfCourse(Guid courseId);
         List<Enrollment> GetEnrollmentsOfCourse(Course course);
 
-        Student GetStudentById(StudentId studentId);
+        Student GetStudentById(Guid studentId);
 
-        List<Student> GetStudentsOfEnrollment(CourseId courseId);
+        List<Student> GetStudentsOfEnrollment(Guid courseId);
         List<Student> GetStudentsOfEnrollment(Course course);
 
         List<Student> GetStudentsFromCourse(Course course);
 
-        List<Course> GetCoursesByTeacher(TeacherId teacherId);
+        List<Course> GetCoursesByTeacher(Guid teacherId);
         List<Course> GetCoursesByTeacher(Teacher teacher);
 
         List<Course> GetAllCourses();
 
-        Student CreateStudent(Student student);
+        Student CreateStudent(string name);
 
-        Enrollment CreateEnrollment(Enrollment enrollment);
+        Enrollment CreateEnrollment(Student student, Course course);
     }
 }

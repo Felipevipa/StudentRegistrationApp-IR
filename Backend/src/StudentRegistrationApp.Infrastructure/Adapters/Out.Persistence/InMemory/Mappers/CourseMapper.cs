@@ -17,7 +17,7 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
         {
             return new CourseDto
             {
-                Id = course.Id.Id,
+                Id = course.CourseId,
                 Name = course.Name,
                 Credits = course.Credits,
                 Teacher = _teacherMapper.ToDto(course.Teacher)
@@ -27,7 +27,7 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
         public Course ToEntity(CourseDto courseDto)
         {
             return new Course(
-                new CourseId(courseDto.Id),
+                courseDto.Id,
                 courseDto.Name,
                 courseDto.Credits,
                 _teacherMapper.ToEntity(courseDto.Teacher)

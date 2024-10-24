@@ -10,7 +10,7 @@ namespace StudentRegistrationApp.Application.Ports.In
 {
     public interface IGetCoursesOfStudent
     {
-        List<Course> Execute(StudentId studentId);
+        List<Course> Execute(Guid studentId);
         List<Course> Execute (Student student);
     }
 }

@@ -18,7 +18,7 @@ namespace StudentRegistrationApp.Application.Services
         {
             _studentsAndCoursesRepository = studentsAndCoursesRepository;
         }
-        public List<Course> Execute(TeacherId teacherId)
+        public List<Course> Execute(Guid teacherId)
         {
             ArgumentNullException.ThrowIfNull(teacherId, "'teacherId' must no be null");
 
@@ -31,7 +31,7 @@ namespace StudentRegistrationApp.Application.Services
         {
             ArgumentNullException.ThrowIfNull(teacher, "'teacher' must no be null");
 
-            return Execute(teacher.Id);
+            return Execute(teacher.TeacherId);
         }
 
     }

@@ -33,10 +33,10 @@ namespace StudentRegistrationApp.Application.Services
             {
                 throw new ArgumentException("You must register three courses with three different teachers");
             }
-            Student student = _studentsAndCoursesRepository.CreateStudent(new Student(name));
+            Student student = _studentsAndCoursesRepository.CreateStudent(name);
             foreach (var course in courses)
             {
-                _studentsAndCoursesRepository.CreateEnrollment(new Enrollment(student, course));
+                _studentsAndCoursesRepository.CreateEnrollment(student, course);
             }
             return student;
         }

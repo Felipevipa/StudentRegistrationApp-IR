@@ -17,7 +17,6 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
         {
             return new EnrollmentDto
             {
-                Id = enrollment.Id.Id,
                 Student = _studentMapper.ToDto(enrollment.Student),
                 Course = _courseMapper.ToDto(enrollment.Course)
             };
@@ -26,7 +25,6 @@ namespace StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemor
         public Enrollment ToEntity(EnrollmentDto enrollmentDto)
         {
             return new Enrollment(
-                new EnrollmentId(enrollmentDto.Id),
                 _studentMapper.ToEntity(enrollmentDto.Student),
                 _courseMapper.ToEntity(enrollmentDto.Course)
             );

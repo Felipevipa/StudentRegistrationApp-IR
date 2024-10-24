@@ -19,13 +19,14 @@ namespace StudentRegistrationApp.Application.Services
             _studentsAndCoursesRepository = studentsAndCoursesRepository;
         }
 
-        public List<Course> Execute(StudentId studentId)
+        public List<Course> Execute(Guid studentId)
         {
             ArgumentNullException.ThrowIfNull(studentId, "'studentId' must no be null");
             List<Enrollment> enrollments = _studentsAndCoursesRepository.GetEnrollmentsOfStudent(studentId);
             List<Course> courses = new List<Course>();
             foreach (var enrollment in enrollments)
             {
+                //Console.WriteLine(enrollment.CourseId);
                 courses.Add(_studentsAndCoursesRepository.GetCourseById(enrollment.CourseId));
             }
 
@@ -35,7 +36,7 @@ namespace StudentRegistrationApp.Application.Services
         public List<Course> Execute(Student student)
         {
             ArgumentNullException.ThrowIfNull(student, "'student' must no be null");
-            return Execute(student.Id);
+            return Execute(student.StudentId);
         }
 
     }

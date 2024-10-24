@@ -41,27 +41,27 @@ namespace StudentRegistrationApp.Tests.Application
             ENROLLMENTS_TEST.Add(new Enrollment(TEST_STUDENT_5, TEST_COURSE));
 
             studentAndCoursesRepositoryMock
-                .Setup(repo => repo.GetEnrollmentsOfCourse(TEST_COURSE.Id))
+                .Setup(repo => repo.GetEnrollmentsOfCourse(TEST_COURSE.CourseId))
                 .Returns(ENROLLMENTS_TEST);
 
             studentAndCoursesRepositoryMock
-                .Setup(repo => repo.GetStudentById(TEST_STUDENT_1.Id))
+                .Setup(repo => repo.GetStudentById(TEST_STUDENT_1.StudentId))
                 .Returns(TEST_STUDENT_1);
 
             studentAndCoursesRepositoryMock
-                .Setup(repo => repo.GetStudentById(TEST_STUDENT_2.Id))
+                .Setup(repo => repo.GetStudentById(TEST_STUDENT_2.StudentId))
                 .Returns(TEST_STUDENT_2);
 
             studentAndCoursesRepositoryMock
-                .Setup(repo => repo.GetStudentById(TEST_STUDENT_3.Id))
+                .Setup(repo => repo.GetStudentById(TEST_STUDENT_3.StudentId))
                 .Returns(TEST_STUDENT_3);
 
             studentAndCoursesRepositoryMock
-                .Setup(repo => repo.GetStudentById(TEST_STUDENT_4.Id))
+                .Setup(repo => repo.GetStudentById(TEST_STUDENT_4.StudentId))
                 .Returns(TEST_STUDENT_4);
 
             studentAndCoursesRepositoryMock
-                .Setup(repo => repo.GetStudentById(TEST_STUDENT_5.Id))
+                .Setup(repo => repo.GetStudentById(TEST_STUDENT_5.StudentId))
                 .Returns(TEST_STUDENT_5);
 
 

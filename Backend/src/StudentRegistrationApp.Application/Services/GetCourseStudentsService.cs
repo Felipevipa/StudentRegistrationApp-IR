@@ -19,19 +19,19 @@ namespace StudentRegistrationApp.Application.Services
             _studentsAndCoursesRepository = studentsAndCoursesRepository;
         }
 
-        public List<Student> Execute(CourseId courseId)
+        public List<Student> Execute(Guid courseId)
         {
             ArgumentNullException.ThrowIfNull(courseId, "'courseId' must no be null");
             List<Enrollment> enrollments = _studentsAndCoursesRepository.GetEnrollmentsOfCourse(courseId);
             List<Student> students = enrollments.Select(enrollment =>
-                _studentsAndCoursesRepository.GetStudentById(enrollment.Student.Id)).ToList();
+                _studentsAndCoursesRepository.GetStudentById(enrollment.Student.StudentId)).ToList();
 
             return students;
         }
         public List<Student> Execute(Course course)
         {
             ArgumentNullException.ThrowIfNull(course, "'course' must no be null");
-            return Execute(course.Id);
+            return Execute(course.CourseId);
         }
     }
 }
