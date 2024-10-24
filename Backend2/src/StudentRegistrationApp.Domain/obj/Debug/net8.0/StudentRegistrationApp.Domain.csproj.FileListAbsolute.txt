@@ -1,0 +1,12 @@
+D:\Proyectos\dotnet\StudentRegistrationApp\Backend2\src\StudentRegistrationApp.Domain\bin\Debug\net8.0\StudentRegistrationApp.Domain.deps.json
+D:\Proyectos\dotnet\StudentRegistrationApp\Backend2\src\StudentRegistrationApp.Domain\bin\Debug\net8.0\StudentRegistrationApp.Domain.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\Backend2\src\StudentRegistrationApp.Domain\bin\Debug\net8.0\StudentRegistrationApp.Domain.pdb
+D:\Proyectos\dotnet\StudentRegistrationApp\Backend2\src\StudentRegistrationApp.Domain\obj\Debug\net8.0\StudentRegistrationApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\dotnet\StudentRegistrationApp\Backend2\src\StudentRegistrationApp.Domain\obj\Debug\net8.0\StudentRegistrationApp.Domain.AssemblyInfoInputs.cache
+D:\Proyectos\dotnet\StudentRegistrationApp\Backend2\src\StudentRegistrationApp.Domain\obj\Debug\net8.0\StudentRegistrationApp.Domain.AssemblyInfo.cs
+D:\Proyectos\dotnet\StudentRegistrationApp\Backend2\src\StudentRegistrationApp.Domain\obj\Debug\net8.0\StudentRegistrationApp.Domain.csproj.CoreCompileInputs.cache
+D:\Proyectos\dotnet\StudentRegistrationApp\Backend2\src\StudentRegistrationApp.Domain\obj\Debug\net8.0\StudentRegistrationApp.Domain.sourcelink.json
+D:\Proyectos\dotnet\StudentRegistrationApp\Backend2\src\StudentRegistrationApp.Domain\obj\Debug\net8.0\StudentRegistrationApp.Domain.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\Backend2\src\StudentRegistrationApp.Domain\obj\Debug\net8.0\refint\StudentRegistrationApp.Domain.dll
+D:\Proyectos\dotnet\StudentRegistrationApp\Backend2\src\StudentRegistrationApp.Domain\obj\Debug\net8.0\StudentRegistrationApp.Domain.pdb
+D:\Proyectos\dotnet\StudentRegistrationApp\Backend2\src\StudentRegistrationApp.Domain\obj\Debug\net8.0\ref\StudentRegistrationApp.Domain.dll

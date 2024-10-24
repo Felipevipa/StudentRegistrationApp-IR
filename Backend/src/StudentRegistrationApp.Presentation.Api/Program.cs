@@ -5,6 +5,9 @@ using StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.InMemory;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
+using StudentRegistrationApp.Infrastructure.Adapters.Out.Persistence.MySqlDB;
+using StudentRegistrationApp.Presentation.Api;
 
 string CORSOpenPolicy = "OpenCORSPolicy";
 
@@ -24,6 +27,9 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<StudentRegistrationDbContextPresentation>(options =>
+{ options.UseSqlServer("name=DefaultConnection"); });
 
 builder.Services.AddSingleton<IStudentAndCoursesRepository, InMemoryStudentAndCoursesRepository>();
 builder.Services.AddScoped<IRegisterStudentAndEnrollments, RegisterStudentAndEnrollmentsService>();

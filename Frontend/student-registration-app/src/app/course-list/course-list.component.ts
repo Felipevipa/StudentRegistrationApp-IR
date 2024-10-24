@@ -19,7 +19,6 @@ export class CourseListComponent {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
-    console.log(id);
     if(id == null){
       return
     }
@@ -29,17 +28,16 @@ export class CourseListComponent {
         courses.map(course => {
           course.students = []
 
-          this.courseService.getCourseStudents(course.id.id)
+          this.courseService.getCourseStudents(course.courseId)
             .subscribe(students => {
               students.map(student => {
                 student.courses = []
-                this.courseService.getCoursesOfStudent(student.id.id)
+                this.courseService.getCoursesOfStudent(student.studentId)
                   .subscribe(courses2 => {
                     student.courses = courses2;
                     course.students.push(student)
                   })
               })
-              console.log(course);
               this.courses.push(course)
             })
         })

@@ -15,19 +15,24 @@ export class RegistrationService {
 
   registerStudent(studentName: string, courses: any[]): Observable<any>  {
     const mapCourses: CourseRegisterDto[] = []; 
+    console.log(courses);
+
     courses.map(course => {
       mapCourses.push({
-        courseId: course.id.id,
+        courseId: course.courseId,
         courseName: course.name,
         credits: course.credits,
-        teacherId: course.teacherId.id,
-        teacherName: "",
+        teacherId: course.teacherId,
+        teacherName: course.teacher.name,
       })
     })
+
     const data: RegisterDto = {
       studentName: studentName,
       courses: mapCourses,
     }
+    console.log(data);
+    
     return this.http.post<any>(`${this.apiUrl}/student/register`, data);
   }
 }

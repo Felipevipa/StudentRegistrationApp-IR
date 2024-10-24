@@ -38,17 +38,18 @@ export class StudentRegistrationComponent implements OnInit {
       alert("Debes registrar exactamente 3 cursos")
       return
     }
-
-    var valueArr = this.registrationForm.value.selectedCourse.map((item: { teacherId: { id: any; }; }) => { return item.teacherId.id });
+    
+    var valueArr = this.registrationForm.value.selectedCourse.map((item: { teacherId: any; }) => { return item.teacherId });
     var isDuplicate = valueArr.some((item: any, idx: any) => { 
-        return valueArr.indexOf(item) != idx 
+      return valueArr.indexOf(item) != idx 
     });
-
+    
     if(isDuplicate) {
       alert("No puedes registrar más de un curso con el mismo profesor")
       return
     }
-
+    
+    
     this.registrationService.registerStudent(this.registrationForm.value.name, this.registrationForm.value.selectedCourse)
       .subscribe(response => {
         this.router.navigate(['/courses/', response.id])
