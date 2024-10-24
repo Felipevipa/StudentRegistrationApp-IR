@@ -2,6 +2,8 @@
 
 Esta aplicación permite a los estudiantes registrarse en materias como parte de un programa basado en créditos. A continuación, se presenta un resumen de las principales características y requerimientos implementados en el sistema.
 
+Esta aplicación esta diseñada con Arquitectura Hexagonal, incluyendo Adaptadores para los puertos primarios como ApiControllers, y adaptadores para los puertos secundarios como InMemory y MySQL
+
 ## Características
 
 1. **Programa de Créditos**: Cada estudiante sigue un programa basado en créditos, donde las materias se asignan con un valor específico de créditos.
